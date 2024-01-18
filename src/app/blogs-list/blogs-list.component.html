@@ -1,0 +1,12 @@
+<!-- @for (blog of (blogs$ | async); trab -->
+<div class="blogs-container">
+  @for (blog of (blogs$ | async); track $index) {
+  <div class="blog">
+    <h2>{{ blog.title }}</h2>
+    <p>{{ blog.body }}</p>
+    <div class="button-container">
+      <button routerLink="/blog/{{ blog.id }}">Read more</button>
+    </div>
+  </div>
+  }
+</div>

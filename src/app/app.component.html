@@ -21,12 +21,14 @@
     <button mat-icon-button (click)="start.open('mouse')">
       <mat-icon>menu</mat-icon>
     </button>
-    <span>SSG Blog</span>
+    <span style="cursor: pointer;" routerLink="/">SSG Blog</span>
   </mat-toolbar>
 
   <router-outlet></router-outlet>
 
+  @if(false){
   <div class="spinner-container">
     <mat-spinner></mat-spinner>
   </div>
+  }
 </mat-sidenav-container>
