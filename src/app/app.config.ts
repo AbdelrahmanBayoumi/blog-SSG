@@ -1,8 +1,59 @@
-import { ApplicationConfig } from '@angular/core';
+import {
+  provideHttpClient,
+  withFetch,
+  withInterceptorsFromDi,
+} from '@angular/common/http';
+import { ApplicationConfig, importProvidersFrom } from '@angular/core';
+import { ReactiveFormsModule } from '@angular/forms';
+import { MatButtonModule } from '@angular/material/button';
+import { MatCardModule } from '@angular/material/card';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatDialogModule } from '@angular/material/dialog';
+import { MatIconModule } from '@angular/material/icon';
+import { MatInputModule } from '@angular/material/input';
+import { MatListModule } from '@angular/material/list';
+import { MatMenuModule } from '@angular/material/menu';
+import { MatPaginatorModule } from '@angular/material/paginator';
+import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
+import { MatSelectModule } from '@angular/material/select';
+import { MatSidenavModule } from '@angular/material/sidenav';
+import { MatSortModule } from '@angular/material/sort';
+import { MatTableModule } from '@angular/material/table';
+import { MatTabsModule } from '@angular/material/tabs';
+import { MatToolbarModule } from '@angular/material/toolbar';
+import {
+  BrowserModule,
+  provideClientHydration,
+} from '@angular/platform-browser';
+import { provideAnimations } from '@angular/platform-browser/animations';
 import { provideRouter } from '@angular/router';
-
 import { routes } from './app.routes';
 
 export const appConfig: ApplicationConfig = {
-  providers: [provideRouter(routes)]
+  providers: [
+    importProvidersFrom(
+      BrowserModule,
+      MatMenuModule,
+      MatButtonModule,
+      MatIconModule,
+      MatCardModule,
+      MatTabsModule,
+      MatSidenavModule,
+      MatListModule,
+      MatToolbarModule,
+      MatInputModule,
+      MatTableModule,
+      MatPaginatorModule,
+      MatSortModule,
+      MatProgressSpinnerModule,
+      MatDialogModule,
+      MatSelectModule,
+      MatDatepickerModule,
+      ReactiveFormsModule
+    ),
+    provideRouter(routes),
+    provideAnimations(),
+    provideHttpClient(withInterceptorsFromDi(), withFetch()),
+    provideClientHydration(),
+  ],
 };
