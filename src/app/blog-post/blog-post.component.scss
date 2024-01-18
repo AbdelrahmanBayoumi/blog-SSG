@@ -1,0 +1,17 @@
+// <div class="blog-post-container">
+//   <h1>{{ blog.title }}</h1>
+
+//   <p>{{ blog.body }}</p>
+// </div>
+
+.blog-post-container{
+    padding: 30px;
+    h1{
+        font-size: 1.4em;
+        margin-bottom: 10px;
+    }
+    p{
+        font-size: 1.2em;
+        color: #999;
+    }
+}

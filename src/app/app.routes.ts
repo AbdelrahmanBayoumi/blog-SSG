@@ -1,6 +1,5 @@
 import { Routes } from '@angular/router';
 import { BlogsListComponent } from './blogs-list/blogs-list.component';
-import { BlogResolver } from './services/blog.resolver';
 
 export const routes: Routes = [
   {
@@ -17,9 +16,6 @@ export const routes: Routes = [
       import('./blog-post/blog-post.component').then(
         (m) => m.BlogPostComponent
       ),
-    resolve: {
-      blog: BlogResolver,
-    },
   },
   {
     path: 'about',
