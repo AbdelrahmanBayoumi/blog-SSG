@@ -34,9 +34,7 @@
             ],
             "scripts": [],
             "server": "src/main.server.ts",
-            "prerender": {
-              "routesFile": "routes.txt"
-            },
+            "prerender": false,
             "ssr": {
               "entry": "server.ts"
             }
@@ -56,7 +54,8 @@
                 }
               ],
               "outputHashing": "all",
-              "serviceWorker": "ngsw-config.json"
+              "serviceWorker": "ngsw-config.json",
+              "appShell": true
             },
             "development": {
               "optimization": false,
